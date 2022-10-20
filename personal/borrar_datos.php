@@ -3,6 +3,7 @@ session_start();
 
 include_once '../funciones.php';
 conectar();
+var_dump($_POST);
 $id_eliminar = $_POST['id_eliminar'];
 print_r($id_eliminar);
 echo '<br>';

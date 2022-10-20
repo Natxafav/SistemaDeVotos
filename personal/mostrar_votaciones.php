@@ -7,6 +7,7 @@ include_once('../funciones.php');
 conectar();
 cabecera_html();
 
+
 if (!$conexion) {
   echo " No hay conexión";
 } else {
@@ -25,6 +26,7 @@ if (!$conexion) {
 
   if (!empty($datos_voto)) {
     foreach ($datos_voto as $value) {
+      var_dump($value[0]);
       echo " <div class=' container   p-3 m-3   border border_secondary border-rounded  text-center bg-light' style='width: 31%; height:auto;border-radius:13px; opacity:0.75;'>  
         <form method='POST' action='borrar_datos.php' class='form-control-group  m-1' enctype='multipart/form-data' name='form2' id='form2'>
       <div class='d-flex flex-column'>  <div class='d-flex flex-sm-column' id='votos_juez'>

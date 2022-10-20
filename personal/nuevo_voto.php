@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 
 include_once('../funciones.php');
 conectar();
@@ -11,10 +11,11 @@ navegar();
 if (!$conexion) {
     echo " No hay conexión";
 } else {
+    var_dump($_POST);
     //recupero datos del post y sesion
     $id_receta = $_POST['recetas'];
     $id_chef = $_POST['chef'];
-    $puntos = $_POST['puntos_totales'];
+    $puntos = $_POST['puntos_totales']; //puntos asignados en este voto
     $id_juez = $_SESSION['id_juez'];
 
     $arr_datos_receta = array();
@@ -34,7 +35,7 @@ if (!$conexion) {
 
     $nombre_receta = $arr_datos_receta[0]['nombre_receta'];
     $nombre_cocinero = $arr_datos_receta[0]['nombre_cocinero'];
-    $puntos_receta = $arr_datos_receta[0]['puntos_totales'];
+    $puntos_receta = $arr_datos_receta[0]['puntos_totales']; //puntos iniciales de la receta
     $puntos_cocinero = $arr_datos_cocinero[0]['puntos_totales'];
     $suma_receta = $puntos_receta + $puntos;
     $suma_cocinero = $puntos_cocinero + $puntos;
